@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.bootique.aws.demo</groupId>
-    <artifactId>bootique.aws.demo</artifactId>
+    <artifactId>bootique-aws-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

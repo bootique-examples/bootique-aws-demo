@@ -8,8 +8,11 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import io.bootique.BQCoreModule;
 import io.bootique.Bootique;
+import io.bootique.meta.application.OptionMetadata;
 
 public class S3Main implements Module {
+
+    static final String BUCKET_OPTION = "bucket";
 
     public static void main(String[] args) {
         Bootique.app(args).autoLoadModules().exec().exit();
@@ -18,18 +21,31 @@ public class S3Main implements Module {
     @Override
     public void configure(Binder binder) {
         BQCoreModule.extend(binder)
-                .addCommand(UploadToS3Command.class)
+                .addCommand(ListS3KeysCommand.class)
+                .addCommand(SendTextToS3Command.class)
+                .addOption(OptionMetadata.builder(BUCKET_OPTION).valueRequired("s3bucket").build())
                 .setApplicationDescription("Simple S3 client.");
     }
 
     @Provides
     @Singleton
-    UploadToS3Command provideUploadCommand(Provider<AmazonS3> s3Provider) {
+    SendTextToS3Command provideUploadCommand(Provider<AmazonS3> s3Provider) {
 
         // AmazonS3 instance is actually injectable directly. Here we are referencing a provider of AmazonS3 because
         // an idiomatic way in Bootique is to use lazy dependency resolution inside commands, to prevent
         // opening external connections too early (e.g. when the command requested is "--help").
 
-        return new UploadToS3Command(s3Provider);
+        return new SendTextToS3Command(s3Provider);
+    }
+
+    @Provides
+    @Singleton
+    ListS3KeysCommand provideListCommand(Provider<AmazonS3> s3Provider) {
+
+        // AmazonS3 instance is actually injectable directly. Here we are referencing a provider of AmazonS3 because
+        // an idiomatic way in Bootique is to use lazy dependency resolution inside commands, to prevent
+        // opening external connections too early (e.g. when the command requested is "--help").
+
+        return new ListS3KeysCommand(s3Provider);
     }
 }

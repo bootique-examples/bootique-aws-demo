@@ -6,3 +6,4 @@ target
 .idea
 derby.log
 dependency-reduced-pom.xml
+config.yml
