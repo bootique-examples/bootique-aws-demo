@@ -23,8 +23,10 @@ public class S3Main implements Module {
         BQCoreModule.extend(binder)
                 .addCommand(ListS3KeysCommand.class)
                 .addCommand(SendTextToS3Command.class)
-                .addOption(OptionMetadata.builder(BUCKET_OPTION).valueRequired("s3bucket").build())
-                .setApplicationDescription("Simple S3 client.");
+                .addOption(OptionMetadata.builder(BUCKET_OPTION)
+                        .description("S3 bucket name with an optional folder component. E.g. 'mybucket' or 'mybucket/myfolder'.")
+                        .valueRequired("s3bucket").build())
+                .setApplicationDescription("A simple cli S3 client.");
     }
 
     @Provides

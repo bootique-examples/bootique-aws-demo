@@ -48,7 +48,7 @@ To send a string of text to a bucket run `--send-text-to-s3` command:
 java -jar target/bootique-aws-demo-1.0-SNAPSHOT.jar \
     -c config.yml \
     -s  \
-    -b mybucket \
+    -b mybucket/myfolder \
     -t "hello aws" \
-    -p 'myfolder/myfile.txt'
+    -f 'myfile.txt'
 ```
