@@ -1,12 +1,13 @@
 package io.bootique.aws.demo;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.google.inject.Provider;
 import io.bootique.cli.Cli;
 import io.bootique.command.CommandOutcome;
 import io.bootique.command.CommandWithMetadata;
 import io.bootique.meta.application.CommandMetadata;
 import io.bootique.meta.application.OptionMetadata;
+
+import javax.inject.Provider;
 
 public class SendTextToS3Command extends CommandWithMetadata {
 

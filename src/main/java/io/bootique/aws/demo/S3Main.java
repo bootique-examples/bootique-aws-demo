@@ -1,16 +1,17 @@
 package io.bootique.aws.demo;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.google.inject.Binder;
-import com.google.inject.Module;
-import com.google.inject.Provider;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
 import io.bootique.BQCoreModule;
+import io.bootique.BaseModule;
 import io.bootique.Bootique;
+import io.bootique.di.Binder;
+import io.bootique.di.Provides;
 import io.bootique.meta.application.OptionMetadata;
 
-public class S3Main implements Module {
+import javax.inject.Provider;
+import javax.inject.Singleton;
+
+public class S3Main extends BaseModule {
 
     static final String BUCKET_OPTION = "bucket";
 
