@@ -30,13 +30,13 @@ cp config.sample.yml config.yml
 To see available options, run the app with `--help`:
 
 ```
-java -jar target/bootique-aws-demo-1.0-SNAPSHOT.jar  -h
+java -jar target/bootique-aws-demo-2.0.jar  -h
 ```
 
 To list a bucket contents run `--list` command:
 
 ```
-java -jar target/bootique-aws-demo-1.0-SNAPSHOT.jar \
+java -jar target/bootique-aws-demo-2.0.jar \
     -c config.yml \
     -l \
     -b mybucket
@@ -45,7 +45,7 @@ java -jar target/bootique-aws-demo-1.0-SNAPSHOT.jar \
 To send a string of text to a bucket run `--send-text-to-s3` command:
 
 ```
-java -jar target/bootique-aws-demo-1.0-SNAPSHOT.jar \
+java -jar target/bootique-aws-demo-2.0.jar \
     -c config.yml \
     -s  \
     -b mybucket/myfolder \
