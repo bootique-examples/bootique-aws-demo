@@ -1,3 +1,5 @@
+[![verify](https://github.com/bootique-examples/bootique-aws-demo/actions/workflows/verify.yml/badge.svg)](https://github.com/bootique-examples/bootique-aws-demo/actions/workflows/verify.yml)
+
 # bootique-aws-demo
 
 A simple Bootique app demonstrating the usage of `bootique-aws` to access
