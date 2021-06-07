@@ -6,6 +6,10 @@ A simple Bootique app demonstrating the usage of `bootique-aws` to access
 Amazone Web Services. Specifically shows how to access AWS S3 with
 `bootique-aws-s3`.
 
+You can find different versions of framework in use at
+* [1.x](https://github.com/bootique-examples/bootique-aws-demo/tree/1.x)
+* [2.x](https://github.com/bootique-examples/bootique-aws-demo/tree/2.x)
+
 ## Building
 
 ```
